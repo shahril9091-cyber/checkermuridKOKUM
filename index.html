@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e7f6fb">
+  <meta name="description" content="Semakan nama dan rekod kokurikulum murid Tahap 2 SK Seri Jaya.">
+  <title>CHECKER NAMA eKOKUM</title>
+  <style>
+/* CHECKER NAMA eKOKUM / Bright Liquid Metal Automotive 2026 */
+:root {
+  color-scheme:dark;
+  font-family:"Arial Nova","Aptos",Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-synthesis:none;
+  --bg:#070b11;--shell:#0b111b;--panel:#101923;--panel-deep:#0a111a;
+  --line:#304453;--line-soft:rgba(164,193,208,.14);
+  --text:#f0f6fa;--muted:#a3b5c2;--quiet:#778d9c;
+  --cyan:#7ee3ea;--teal:#24cdb6;--ocean:#3474db;
+  --metal:linear-gradient(112deg,#a4b6c3 0%,#f8fcff 14%,#76899b 31%,#dceaf1 47%,#8297a6 63%,#f9feff 78%,#8d9fac 100%);
+  --accent:linear-gradient(109deg,#367cda 4%,#159cba 50%,#3be2c0 100%);
+  --shadow:0 18px 52px rgba(0,0,0,.26);
+}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-width:320px;min-height:100vh;display:flex;flex-direction:column;
+  color:var(--text);
+  background:radial-gradient(ellipse 65% 46% at 100% 1%,rgba(19,95,132,.20),transparent 75%),
+             radial-gradient(ellipse 44% 50% at -15% 65%,rgba(20,75,97,.1),transparent 80%),
+             linear-gradient(165deg,#070b11 0%,#0c131b 50%,#070b11 100%);
+}
+button,input,select{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.42;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #81f5ed;outline-offset:3px}
+a{color:#9cecf3;overflow-wrap:anywhere}
+.shell{width:min(1250px,calc(100% - 64px));margin-inline:auto}
+.hero{position:relative;isolation:isolate;overflow:hidden;color:var(--text);background:
+  radial-gradient(ellipse 28% 55% at 67% 42%,rgba(22,194,198,.16),transparent 100%),
+  radial-gradient(ellipse 35% 86% at 98% 100%,rgba(23,80,154,.22),transparent 100%),
+  linear-gradient(123deg,#0b111a 0%,#0e1825 49%,#080e16 100%);
+  border-bottom:1px solid rgba(157,187,204,.19);
+}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(105deg,transparent 10%,rgba(255,255,255,.025) 49%,transparent 52%),
+  repeating-linear-gradient(90deg,transparent 0 125px,rgba(205,237,255,.022) 126px,transparent 127px);
+}
+.hero:after{content:"";position:absolute;inset:auto 0 0 0;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent 5%,#526c79 21%,#daf5f6 46%,#3bd2c7 67%,transparent 95%);opacity:.66}
+.hero-inner{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:275px;padding-block:38px;gap:32px}
+.hero-copy{position:relative;z-index:2;flex:1 1 58%;min-width:0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#93d7dd;font-size:.7rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+.eyebrow:before{content:"";width:26px;height:2px;background:var(--accent);border-radius:2px;box-shadow:0 0 12px #2ee6d48a}
+.hero h1{font-size:clamp(2.5rem,5.0vw,4.35rem);letter-spacing:-.065em;line-height:1.02;font-weight:900;margin:22px 0 16px;max-width:800px;text-wrap:balance}
+.hero h1 em{font-style:normal;white-space:nowrap;color:#dce7ec;background:var(--metal);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 4px 34px rgba(238,251,255,.08)}
+.hero p{margin:0;color:#b7c6d1;max-width:610px;font-size:.98rem;line-height:1.65}
+.hero-meta{display:flex;gap:15px;flex-wrap:wrap;margin-top:26px;color:#a5bdc9;font-size:.69rem;letter-spacing:.09em;font-weight:750;text-transform:uppercase}
+.hero-meta span{display:inline-flex;align-items:center;gap:8px}
+.signal{display:inline-block;width:7px;height:7px;border-radius:50%;background:#55e2c5;box-shadow:0 0 0 4px #32d5bb24,0 0 17px #50f1d9a1}
+.hero-visual{position:absolute;z-index:0;right:13%;top:1%;height:100%;width:min(510px,48%);opacity:.78;pointer-events:none;filter:drop-shadow(0 16px 22px rgba(5,9,16,.45))}
+.hero-visual svg{height:100%;width:100%;display:block}
+.clock{z-index:2;flex:none;align-self:center;min-width:250px;text-align:right;padding:22px 22px 19px;
+  background:linear-gradient(148deg,rgba(91,121,146,.22),rgba(11,19,31,.88) 29%,rgba(11,19,30,.78) 79%,rgba(110,151,166,.13));
+  border:1px solid #71879766;border-radius:20px;box-shadow:inset 0 1px 0 #dff8ff44,inset 0 -1px 0 #0a1621,0 13px 32px #0005;
+}
+.clock-head{display:block;font-weight:800;letter-spacing:.24em;color:#7ce3d6;text-transform:uppercase;font-size:.59rem;margin-bottom:10px}
+.clock-date{display:block;color:#c8d8e2;font-size:.75rem;white-space:nowrap}
+.clock-time{display:block;font-size:clamp(2.05rem,3.3vw,3rem);font-weight:850;letter-spacing:-.05em;font-variant-numeric:tabular-nums;line-height:1.12;margin-top:8px;
+ background:var(--metal);color:#e1f3f7;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.clock-zone{display:block;font-size:.6rem;letter-spacing:.15em;margin-top:12px;color:#809eaa}
+.tabs-wrap{position:relative;z-index:3;border-bottom:1px solid var(--line-soft);background:linear-gradient(90deg,#0a111a,#101a25,#0a111a)}
+.tabs{display:flex;justify-content:center;align-items:center;min-height:81px;gap:5px;overflow-x:auto;scrollbar-width:thin;white-space:nowrap}
+.tab{border:1px solid transparent;border-radius:999px;background:transparent;color:#91a4b2;min-width:150px;padding:12px 29px;min-height:45px;font-size:.8rem;font-weight:850;letter-spacing:.07em;transition:background .22s,color .22s,box-shadow .22s,transform .22s}
+.tab:hover{color:#eefaff;background:#1a2a37}
+.tab[aria-selected="true"]{color:#08121d;border-color:rgba(238,253,255,.6);background:var(--metal);box-shadow:inset 0 1px 1px white,0 5px 20px #00cbb623,0 2px 9px #0008;text-shadow:0 1px 0 #fff9}
+main{flex:1;padding-block:41px 70px}
+.section-intro{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:23px}
+.section-intro h2{font-size:clamp(1.45rem,2.4vw,1.85rem);letter-spacing:-.045em;margin:0 0 7px;font-weight:830;color:#f1f7fa}
+.section-intro p{color:var(--muted);font-size:.88rem;line-height:1.55;margin:0}
+.info-badge{border:1px solid rgba(117,224,216,.33);background:linear-gradient(120deg,#163944,#152732);color:#a8eee8;border-radius:999px;white-space:nowrap;font-weight:850;font-size:.66rem;letter-spacing:.10em;padding:10px 17px}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;margin:24px 0 23px}
+.stat{position:relative;isolation:isolate;overflow:hidden;min-width:0;padding:22px 19px 20px;border-radius:19px;
+ background:linear-gradient(145deg,#192633 0%,#111b26 48%,#0f1822 100%);border:1px solid #34455188;
+ box-shadow:inset 0 1px 0 #d1f1ff20,0 13px 30px #0004}
+.stat:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(118deg,transparent 20%,rgba(255,255,255,.036) 40%,transparent 45%);z-index:-1}
+.stat:after{content:"";position:absolute;left:19px;bottom:0;width:49px;height:2px;background:linear-gradient(90deg,#57daf3,#38c8a6,transparent)}
+.stat-top{display:flex;gap:9px;align-items:center;color:#b1c1cc;font-size:.73rem;letter-spacing:.035em;font-weight:800;margin-bottom:12px}
+.stat-dot{height:9px;width:9px;flex:none;border:2px solid #77eadb;border-radius:50%;box-shadow:0 0 0 3px #36c5bc12}
+.stat strong{display:block;font-size:clamp(1.8rem,2.6vw,2.5rem);font-weight:900;letter-spacing:-.052em;font-variant-numeric:tabular-nums;line-height:1.1;color:#eef7fd}
+.stat.warn .stat-dot{border-color:#ffbe7a}.stat.warn strong{color:#f7c58e}.stat.warn:after{background:linear-gradient(90deg,#ffa75b,transparent)}
+.notice{position:relative;overflow:hidden;background:linear-gradient(105deg,#102a33,#0d232d 45%,#14202d);border:1px solid rgba(65,158,167,.35);border-left:3px solid #41d4bf;
+ border-radius:13px;padding:15px 18px;color:#b6d7dd;line-height:1.65;font-size:.8rem;margin-bottom:24px}
+.notice strong{color:#9bf3e5}
+.panel{position:relative;background:linear-gradient(140deg,#14202c 0%,#0f1822 37%,#111a24 100%);border:1px solid rgba(140,170,189,.3);border-radius:23px;box-shadow:var(--shadow),inset 0 1px 0 #d7efff10;overflow:hidden}
+.panel.search-panel:before{content:"";pointer-events:none;position:absolute;z-index:1;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,#ceeaf6 20%,#389bae 53%,#38d6c2 85%,transparent)}
+.toolbar{padding:28px 27px 19px;display:grid;grid-template-columns:1fr;gap:25px;align-items:end}
+.field{min-width:0}.field label{display:block;font-size:.74rem;color:#acbfcb;font-weight:800;letter-spacing:.055em;margin-bottom:9px}
+.field input,.field select{width:100%;background:#0b1520;color:#eaf5fa;border:1px solid #496072;border-radius:12px;min-height:47px;padding:11px 13px;transition:border-color .16s,box-shadow .16s,background .16s;outline:0}
+.field input::placeholder{color:#8098a8}
+.field input:focus,.field select:focus{background:#10202a;border-color:#55d6d6;box-shadow:0 0 0 3px #30d7cb18}
+.field select{appearance:none;padding-right:35px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23abd8df' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.field select option{background:#12212c;color:#edf5f9}
+.search-field label{color:#80e5d8;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:13px}
+.search-control{position:relative;display:flex;align-items:center}
+.search-control input{min-height:69px;border-radius:16px;padding:17px 110px 17px 66px;background:linear-gradient(120deg,#0c1721,#121f2c);border:1px solid #5b7f8c;box-shadow:inset 0 1px 0 rgba(255,255,255,.07);font-weight:650;letter-spacing:.005em;font-size:clamp(.98rem,1.5vw,1.14rem)}
+.search-control input::-webkit-search-cancel-button{cursor:pointer}
+.search-control:focus-within input{border-color:#79eee1;box-shadow:0 0 0 3px #45e7d925,0 0 29px #0da69e26}
+.search-icon{position:absolute;width:25px;height:25px;left:23px;color:#82e4de;pointer-events:none}
+.keycap{position:absolute;right:22px;border:1px solid #536774;background:linear-gradient(180deg,#253440,#17222b);color:#a6c0cc;font-weight:800;font-size:.67rem;letter-spacing:.1em;border-radius:8px;padding:7px 9px;pointer-events:none;box-shadow:inset 0 1px 0 #aac6d032}
+.field-hint{display:block;margin-top:10px;font-size:.75rem;color:#7f9aaa}
+.filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.filter-heading{margin:0 0 -4px;letter-spacing:.16em;font-size:.65rem;font-weight:850;color:#748f9c;text-transform:uppercase}
+.tools-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:13px;padding:0 27px 24px}
+.tools-row p{margin:0;color:#a0b6c2;font-size:.77rem;line-height:1.5}.toolbar-actions{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:11px 16px;border-radius:11px;font-size:.8rem;letter-spacing:.02em;font-weight:800;
+ border:1px solid #4d6574;color:#e3f1f7;background:linear-gradient(150deg,#2a3d49,#1b2934 50%,#17232e);box-shadow:inset 0 1px 0 #d3edff20,0 4px 11px #0003;
+ transition:background .19s,transform .19s,box-shadow .19s}
+.btn:hover:not(:disabled){transform:translateY(-2px);border-color:#88aebb;background:linear-gradient(140deg,#334f5b,#213746);box-shadow:0 6px 15px #0006,inset 0 1px 0 #e9ffff30}
+.btn:active:not(:disabled){transform:translateY(0)}
+.btn.primary{border:1px solid #8bf7f05c;color:#06151c;background:linear-gradient(110deg,#8cebe9,#51b6d3 38%,#7ef1c7 100%);box-shadow:inset 0 1px 1px #fff8,0 6px 22px #22d8b228}
+.btn.primary:hover:not(:disabled){background:linear-gradient(100deg,#c5fff6,#8bd7e8,#a0ffda)}
+.btn.light{border-color:#377c89;color:#9fece6;background:linear-gradient(145deg,#173d45,#163039)}
+.btn.danger{color:#ffb4b4;background:#321d26;border-color:#87515a}
+.btn.small{min-height:34px;padding:7px 11px;font-size:.73rem}
+.table-scroll{overflow-x:auto;border-top:1px solid #31455070}table{width:100%;border-collapse:collapse;text-align:left}th{padding:15px 14px;text-transform:uppercase;white-space:nowrap;letter-spacing:.055em;font-size:.66rem;font-weight:850;color:#a8c4ce;background:#1b2b37;border-bottom:1px solid #405767}td{padding:14px;border-bottom:1px solid #2c414d;font-size:.8rem;line-height:1.5;vertical-align:middle;color:#d2e0e7}tbody tr{transition:background .18s}tbody tr:hover{background:#1b2e37}tbody tr:last-child td{border-bottom:0}.number{width:43px;color:#88a7b6;font-weight:800}.student{min-width:235px;max-width:330px;font-weight:850;color:#f5faff}.class-tag{display:inline-flex;align-items:center;background:#173641;border:1px solid #316a78;color:#a5f4e8;border-radius:8px;padding:7px 10px;font-size:.71rem;font-weight:800;white-space:nowrap}.pill-missing{display:inline-block;padding:5px 9px;color:#ffd19b;background:#433025;border:1px solid #a5784d;border-radius:7px;font-size:.7rem;font-weight:900;letter-spacing:.03em}.duplicate{display:block;color:#ffd497;font-size:.69rem;font-weight:750;margin-top:4px}.compact td{padding-block:9px}.muted{color:var(--muted)}
+.pager{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 24px;border-top:1px solid #314a55}.pager span{font-size:.78rem;color:#acc2ce}.pager-actions{display:flex;gap:8px}
+.empty{position:relative;text-align:center;border-top:1px solid #2a414a;padding:53px 24px 60px;background:radial-gradient(ellipse 45% 80% at 50% 65%,#14323a55,transparent 100%)}
+.empty-mark{position:relative;display:grid;place-items:center;width:92px;height:92px;margin:0 auto 23px;border-radius:50%;background:radial-gradient(circle at 30% 27%,#4b7280,#0c1720 60%);border:1px solid #618391;box-shadow:inset 0 1px 0 #ffffff60,inset 0 -7px 15px #0007,0 0 35px #20d4b817}
+.empty-mark:before{content:"";position:absolute;inset:11px;border-radius:50%;border:1px solid #589ba5a3;box-shadow:inset 0 0 13px #328b9955}
+.empty-mark svg{position:relative;width:34px;height:34px;color:#d3f5f6;filter:drop-shadow(0 1px 7px #71d6db35)}
+.empty h3{margin:0 0 10px;font-size:1.13rem;font-weight:860;letter-spacing:-.02em;color:#f0f8fa}
+.empty p{margin:0 auto 22px;max-width:450px;font-size:.84rem;color:#96b4c1;line-height:1.65}
+footer{border-top:1px solid #2f4952;background:linear-gradient(90deg,#0a141e,#101d27,#0a141e);padding:22px 14px;color:#9cafbd;text-align:center;letter-spacing:.035em;font-size:.77rem;font-weight:750}
+.toast{position:fixed;z-index:30;bottom:22px;right:22px;max-width:min(410px,calc(100vw - 40px));padding:15px 19px;border-radius:13px;background:#17414b;color:#d9fffa;border:1px solid #68c9c4;box-shadow:0 15px 40px #0009;font-size:.84rem;line-height:1.5}.toast.error{background:#46232c;color:#fff1f3;border-color:#b6626c}
+dialog{border:1px solid #63818d;border-radius:22px;background:#101b26;color:#eaf5fa;padding:0;width:min(570px,calc(100% - 28px));max-height:calc(100vh - 38px);box-shadow:0 30px 100px #000c;overflow:hidden}dialog::backdrop{background:rgba(2,8,14,.78);backdrop-filter:blur(7px)}.dialog-head{padding:22px 25px;background:linear-gradient(115deg,#1b3449,#174048,#172c41);border-bottom:1px solid #567785}.dialog-head h3{font-size:1.15rem;margin:0;color:#fff}.dialog-head p{margin:5px 0 0;font-size:.78rem;color:#add0d3}.dialog-body{display:grid;grid-template-columns:1fr 1fr;gap:13px;max-height:65vh;overflow:auto;padding:24px 25px}.dialog-body .wide{grid-column:1/-1}.dialog-footer{display:flex;justify-content:flex-end;gap:9px;padding:16px 25px 23px}
+@media(max-width:1100px){.hero-visual{right:15%;opacity:.48}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.student{min-width:190px}}
+@media(max-width:760px){.shell{width:min(100% - 30px,1250px)}.hero-inner{min-height:0;gap:22px;align-items:flex-start;flex-direction:column;padding-block:35px 29px}.hero h1{font-size:clamp(2.4rem,8vw,3.6rem);margin:16px 0 12px}.hero p{font-size:.85rem;max-width:550px}.hero-meta{margin-top:17px}.hero-visual{right:-11%;top:-17%;height:77%;width:75%;opacity:.22}.clock{width:100%;min-width:0;text-align:left;padding:17px 19px}.clock-head{margin-bottom:6px}.clock-time{font-size:2.2rem}.tabs{min-height:71px}.tab{min-width:142px}.section-intro{flex-direction:column;gap:12px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:16px 16px 18px}.stat:last-child{grid-column:1/-1}.stat-top{font-size:.69rem}.stat strong{font-size:1.85rem}.toolbar{padding:20px 17px 16px;gap:19px}.search-control input{min-height:61px;padding:15px 75px 15px 51px;font-size:.94rem}.search-icon{left:17px;width:22px;height:22px}.keycap{right:13px;padding:6px 7px}.filter-grid{grid-template-columns:1fr 1fr;gap:11px}.filter-grid>.field:last-child{grid-column:1/-1}.tools-row{padding:0 17px 19px}.empty{padding:40px 15px 44px}}
+@media(max-width:700px){
+  .table-scroll{overflow:visible;border-top:1px solid #2b424e}table,tbody,tr,td{display:block;width:100%}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}tbody{display:block;padding:12px}tbody tr{border:1px solid #3b5966;border-radius:14px;background:linear-gradient(135deg,#152733,#101c26);box-shadow:0 7px 20px #0004;overflow:hidden;margin-bottom:13px}tbody tr:last-child{margin-bottom:0}tbody tr:hover{background:#182b37}tbody td{display:flex;align-items:flex-start;justify-content:space-between;gap:13px;text-align:right;padding:10px 13px;border-bottom:1px solid #304552;font-size:.78rem;min-width:0;max-width:none}tbody td:before{content:attr(data-label);color:#88b2bc;font-weight:750;font-size:.69rem;line-height:1.5;min-width:95px;max-width:120px;text-align:left;flex-shrink:0}tbody td.student{display:block;text-align:left;padding:15px 15px 13px;font-size:.89rem;color:#f0f8ff;background:#213641;font-weight:850}tbody td.student:before{display:block;max-width:none;margin:0 0 6px}tbody td.number{display:none}tbody td:last-child{border-bottom:0}tbody td .btn{margin-left:auto}.duplicate{font-size:.67rem}.pager{flex-wrap:wrap;padding:15px 17px}.pager-actions{margin-left:auto}
+}
+@media(max-width:430px){.shell{width:calc(100% - 24px)}.hero h1{font-size:2.35rem}.hero-meta{gap:9px}.hero-meta span{font-size:.61rem}.stat-top{font-size:.64rem}.clock-date{white-space:normal}.filter-grid{grid-template-columns:1fr}.filter-grid>.field:last-child{grid-column:auto}.search-control input{padding-right:44px}.keycap{display:none}.dialog-body{grid-template-columns:1fr}.dialog-body .wide{grid-column:auto}.dialog-footer{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+/* Silver Pearl / Ocean Teal • Liquid Metal Automotive (light edition)
+   Overrides only colour, surface and elevation. Behaviour and data unchanged. */
+:root {
+  color-scheme:light;
+  --bg:#f1f7fa;--shell:#f5faff;--panel:#ffffff;--panel-deep:#eff8fb;
+  --line:#c8dbe3;--line-soft:rgba(35,104,130,.15);
+  --text:#152e40;--muted:#4c6779;--quiet:#5d7787;
+  --cyan:#087da7;--teal:#087e77;--ocean:#2860c6;
+  --metal:linear-gradient(115deg,#e6eef3 0%,#fff 12%,#91aab8 25%,#faffff 43%,#b3c7d3 57%,#fff 75%,#99b1c1 100%);
+  --accent:linear-gradient(100deg,#2875df 5%,#13a2c3 48%,#00bca9 100%);
+  --shadow:0 16px 48px rgba(25,89,117,.10),0 3px 12px rgba(15,80,111,.04);
+}
+body {
+  color:var(--text);
+  background:
+    radial-gradient(ellipse 58% 35% at 95% 2%,rgba(65,194,218,.14),transparent 83%),
+    radial-gradient(ellipse 58% 42% at -18% 69%,rgba(51,114,218,.07),transparent 76%),
+    linear-gradient(155deg,#f9fcff 0%,#eef7fb 54%,#f8fcff 100%);
+}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline-color:#077bba}
+a{color:#1265b9}
+.hero{
+  color:#143149;
+  background:
+    radial-gradient(ellipse 38% 70% at 67% 40%,rgba(255,255,255,.8),transparent 88%),
+    radial-gradient(ellipse 40% 95% at 98% 0%,rgba(35,182,177,.19),transparent 85%),
+    linear-gradient(112deg,#ecf8ff 0%,#ceeaf8 38%,#e4f6fb 65%,#bdf0e7 100%);
+  border-bottom:1px solid rgba(56,127,150,.26);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95);
+}
+.hero:before{
+  background:
+    linear-gradient(110deg,transparent 12%,rgba(255,255,255,.30) 45%,transparent 55%),
+    repeating-linear-gradient(90deg,transparent 0 137px,rgba(39,120,159,.035) 138px,transparent 139px);
+}
+.hero:after{height:3px;background:linear-gradient(90deg,transparent 4%,#70b7d7 23%,#f9ffff 40%,#18a5be 64%,#22c6ae 80%,transparent 97%);opacity:1}
+.eyebrow{color:#216a85}
+.eyebrow:before{box-shadow:0 0 9px rgba(0,162,173,.25)}
+.hero h1{color:#13334b;text-shadow:0 2px 1px rgba(255,255,255,.4)}
+.hero h1 em{
+  color:#155179;
+  background:linear-gradient(105deg,#174365 2%,#317ea0 22%,#82b1c4 38%,#1c7396 55%,#356883 70%,#0d5269 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:0 9px 27px rgba(34,106,130,.10);
+}
+.hero p{color:#476579}
+.hero-meta{color:#3d6579}
+.signal{background:#00aa94;box-shadow:0 0 0 4px rgba(0,157,144,.13),0 0 17px rgba(24,164,153,.35)}
+.hero-visual{opacity:.52;filter:drop-shadow(0 9px 18px rgba(43,130,151,.18))}
+.clock{
+  color:#19455e;
+  background:linear-gradient(135deg,rgba(255,255,255,.86),rgba(240,253,255,.7) 47%,rgba(210,247,243,.7) 100%);
+  border:1px solid rgba(255,255,255,.99);
+  box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(35,122,157,.18),0 14px 40px rgba(18,90,121,.12);
+  backdrop-filter:blur(13px);
+}
+.clock-head{color:#087c83}
+.clock-date{color:#527287}
+.clock-time{background:none;color:#173f60;-webkit-text-fill-color:currentColor;text-shadow:none}
+.clock-zone{color:#67849a}
+.tabs-wrap{border-bottom:1px solid #d8e8ee;background:linear-gradient(100deg,#f3f9fc,#fff 53%,#eef9fb);box-shadow:0 3px 14px rgba(31,95,129,.04)}
+.tab{color:#476d81}
+.tab:hover{color:#1b5675;background:#e6f3f7}
+.tab[aria-selected="true"]{
+  color:#14415b;border-color:#c3d7df;
+  background:linear-gradient(125deg,#e3ebf0 0%,#fff 19%,#c0d3dd 41%,#fff 70%,#cadce5 100%);
+  box-shadow:inset 0 1px 1px white,0 5px 16px rgba(23,88,115,.12),0 1px 3px #b9d0dc;
+  text-shadow:0 1px 0 #fff;
+}
+.section-intro h2{color:#203f57}
+.section-intro p{color:#567287}
+.info-badge{border-color:#addbdc;background:linear-gradient(110deg,#e1f8fb,#d9f5ed);color:#076b78}
+.stat{
+  background:linear-gradient(145deg,#fff 0%,#f4fafd 47%,#e7f4f8 100%);
+  border:1px solid #d6e5eb;
+  box-shadow:inset 0 1px 0 #fff,0 9px 22px rgba(34,100,132,.08);
+}
+.stat:before{background:linear-gradient(115deg,transparent 18%,rgba(255,255,255,.65) 40%,transparent 48%)}
+.stat:after{background:linear-gradient(90deg,#3478dd,#14b6af,transparent)}
+.stat-top{color:#506f80}
+.stat-dot{border-color:#029f9c;box-shadow:0 0 0 3px rgba(27,182,174,.12)}
+.stat strong{color:#173d59}
+.stat.warn .stat-dot{border-color:#c87627}
+.stat.warn strong{color:#a75117}
+.stat.warn:after{background:linear-gradient(90deg,#e3a351,transparent)}
+.notice{
+  background:linear-gradient(105deg,#e7fafa,#f4fcff 47%,#e9f7fc);
+  border:1px solid #bddede;border-left:3px solid #13aaa3;
+  color:#3f6878;
+}
+.notice strong{color:#087980}
+.panel{
+  background:linear-gradient(140deg,#fff 0%,#fbfdff 46%,#f5fbfe 100%);
+  border:1px solid #d0e0e8;
+  box-shadow:var(--shadow),inset 0 1px 0 white;
+}
+.panel.search-panel:before{height:3px;background:linear-gradient(90deg,#e5f9ff,#93ccdc 20%,#48b0d1 53%,#23cfb6 84%,#e6fff9)}
+.field label{color:#3e6478}
+.field input,.field select{
+  background:#fff;color:#193f56;border:1px solid #bdced8;
+  box-shadow:0 1px 1px rgba(29,84,108,.02);
+}
+.field input::placeholder{color:#7893a5}
+.field input:focus,.field select:focus{background:#fff;border-color:#14a0b3;box-shadow:0 0 0 4px rgba(20,167,181,.13)}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233a7888' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.field select option{background:#fff;color:#193f56}
+.search-field label{color:#0b8288}
+.search-control input{
+  background:linear-gradient(110deg,#fff,#f4fcff);
+  border:1px solid #85becb;
+  box-shadow:inset 0 1px 0 #fff,0 4px 16px rgba(12,111,140,.08);
+  color:#163d57;
+}
+.search-control:focus-within input{border-color:#079ca7;box-shadow:0 0 0 4px rgba(27,184,189,.16),0 10px 25px rgba(45,155,175,.10)}
+.search-icon{color:#098c9e}
+.keycap{border-color:#c4dce5;background:linear-gradient(180deg,#fff,#e9f1f5);color:#568095;box-shadow:inset 0 1px 0 #fff}
+.field-hint{color:#657f90}
+.filter-heading{color:#658397}
+.tools-row p{color:#567384}
+.btn{
+  border:1px solid #b5cdd8;color:#224d65;
+  background:linear-gradient(145deg,#fff,#e5f0f5 54%,#edf7fa);
+  box-shadow:inset 0 1px 0 white,0 3px 8px rgba(33,100,130,.10);
+}
+.btn:hover:not(:disabled){border-color:#7db7c8;background:linear-gradient(140deg,#fff,#d6f0f3);box-shadow:0 7px 16px rgba(33,113,140,.15),inset 0 1px 0 white}
+.btn.primary{border-color:#048fa1;color:#fff;background:linear-gradient(110deg,#236ed7,#099eb7 48%,#06af99);box-shadow:inset 0 1px 0 rgba(255,255,255,.33),0 6px 18px rgba(4,149,165,.23)}
+.btn.primary:hover:not(:disabled){background:linear-gradient(110deg,#1e63c7,#008ea6,#029d8c)}
+.btn.light{border-color:#9cced0;color:#087e83;background:linear-gradient(135deg,#edfcfd,#daf4f1)}
+.btn.danger{color:#a7353b;background:#fff1f1;border-color:#e7b6bc}
+.table-scroll{border-top:1px solid #dce9ee}
+th{background:#eaf4f8;color:#426777;border-bottom:1px solid #ccdee6}
+td{color:#34566a;border-bottom:1px solid #e0eaf0}
+tbody tr:hover{background:#f0fafb}
+.number{color:#6d8a9b}
+.student{color:#173c58}
+.class-tag{background:#e5f8f7;border-color:#abd9db;color:#08737a}
+.pill-missing{color:#9b4e0b;background:#fff2df;border-color:#e8bc83}
+.duplicate{color:#b26417}
+.pager{border-top:1px solid #dbe8ed}
+.pager span{color:#547083}
+.empty{
+  border-top:1px solid #dbe8ef;
+  background:radial-gradient(ellipse 47% 80% at 50% 70%,rgba(130,221,217,.15),transparent 100%);
+}
+.empty-mark{
+  background:radial-gradient(circle at 30% 25%,#fff,#d1edf4 55%,#a2d8df);
+  border:1px solid #b6d8e0;
+  box-shadow:inset 0 2px 1px white,inset 0 -5px 14px rgba(58,136,156,.11),0 10px 25px rgba(32,136,157,.12);
+}
+.empty-mark:before{border-color:#b7dae0;box-shadow:inset 0 0 12px rgba(38,126,152,.07)}
+.empty-mark svg{color:#147c94;filter:none}
+.empty h3{color:#1b4358}
+.empty p{color:#597889}
+footer{border-top:1px solid #d5e6ec;background:linear-gradient(90deg,#ecf7fb,#fff,#e8f6f8);color:#587486}
+.toast{background:#e2f9f6;color:#105c62;border:1px solid #7fcac6;box-shadow:0 14px 33px rgba(28,102,128,.18)}
+.toast.error{background:#fff0f0;color:#9f3339;border-color:#d7a1a5}
+dialog{border-color:#b4d0dc;background:#fff;color:#193f56;box-shadow:0 30px 100px rgba(5,37,61,.27)}
+dialog::backdrop{background:rgba(19,53,72,.48)}
+.dialog-head{background:linear-gradient(110deg,#e2f4fc,#def9f3,#e8f4ff);border-bottom-color:#bfdee4}
+.dialog-head h3{color:#173b52}
+.dialog-head p{color:#567789}
+@media(max-width:700px){
+  .table-scroll{border-top-color:#dae9ef}
+  tbody tr{border-color:#d5e5eb;background:linear-gradient(135deg,#fff,#f1f9fc);box-shadow:0 6px 15px rgba(29,109,138,.08)}
+  tbody tr:hover{background:#eff9fc}
+  tbody td{border-bottom-color:#e3ecf1}
+  tbody td:before{color:#628497}
+  tbody td.student{color:#173d59;background:#eaf7fa}
+}
+@media(max-width:760px){.hero-visual{opacity:.14}.hero h1 em{display:block;margin-top:.075em}}
+
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">Sistem Semakan Kokurikulum &nbsp; / &nbsp; Tahap 2</span>
+        <h1>CHECKER NAMA <em>eKOKUM</em></h1>
+        <p>Cari nama murid. Semak penyertaan kokurikulum dengan pantas — satu carian, enam maklumat penting.</p>
+        <div class="hero-meta"><span><i class="signal" aria-hidden="true"></i> DATA TERBENAM · OFFLINE</span><span>TAHUN 04 / 05 / 06</span></div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false">
+          <defs>
+            <linearGradient id="chromeRim" x1="40" y1="0" x2="540" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#4a677a"/><stop offset=".17" stop-color="#edfaff"/><stop offset=".29" stop-color="#5f8799"/><stop offset=".44" stop-color="#deeff7"/><stop offset=".61" stop-color="#3c576e"/><stop offset=".79" stop-color="#bbddea"/><stop offset="1" stop-color="#547e84"/></linearGradient>
+            <linearGradient id="liquidEdge" x1="0" y1="0" x2="550" y2="220" gradientUnits="userSpaceOnUse"><stop stop-color="#69d9e5" stop-opacity="0"/><stop offset=".40" stop-color="#b8f8fb" stop-opacity=".85"/><stop offset=".7" stop-color="#46d1c3" stop-opacity=".75"/><stop offset="1" stop-color="#196d94" stop-opacity="0"/></linearGradient>
+            <linearGradient id="steelFill" x1="0" y1="30" x2="200" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#c5e6f2" stop-opacity=".06"/><stop offset=".55" stop-color="#afc4d0" stop-opacity=".01"/><stop offset="1" stop-color="#2c778d" stop-opacity=".15"/></linearGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+          </defs>
+          <ellipse cx="315" cy="153" rx="198" ry="69" transform="rotate(-16 315 153)" stroke="#6fe5de" stroke-opacity=".28" stroke-width="20" filter="url(#glow)"/>
+          <ellipse cx="317" cy="154" rx="204" ry="72" transform="rotate(-16 317 154)" fill="url(#steelFill)" stroke="url(#chromeRim)" stroke-width="13"/>
+          <ellipse cx="317" cy="154" rx="191" ry="59" transform="rotate(-16 317 154)" stroke="#07111d" stroke-width="8"/>
+          <ellipse cx="316" cy="152" rx="206" ry="73" transform="rotate(-16 316 152)" stroke="url(#liquidEdge)" stroke-width="2"/>
+          <path d="M36 228C186 194 307 103 556 83" stroke="url(#chromeRim)" stroke-opacity=".75" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M52 251C218 218 366 128 587 116" stroke="url(#liquidEdge)" stroke-opacity=".7" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M74 48C230 97 393 61 560 14" stroke="url(#liquidEdge)" stroke-opacity=".5" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="clock" aria-label="Tarikh dan waktu Malaysia"><span class="clock-head">Waktu Tempatan</span><span class="clock-date" id="liveDate">—</span><strong class="clock-time" id="liveTime">--:--:--</strong><span class="clock-zone">ASIA / KUALA LUMPUR &nbsp; · &nbsp; GMT+08</span></div>
+    </div>
+  </header>
+  <main class="shell">
+    <section id="panel-rekod" aria-label="Panel Semakan Murid">
+      <div class="section-intro"><div><h2>Panel Semakan Murid</h2><p>Hasil rekod hanya dibuka apabila nama murid dicari.</p></div><span class="info-badge">Tahun 4 · 5 · 6</span></div>
+      <section class="panel search-panel" aria-label="Carian dan senarai murid">
+        <div class="toolbar">
+          <div class="field search-field"><label for="search">Cari Rekod Murid</label>
+            <div class="search-control">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></svg>
+              <input id="search" type="search" placeholder="Masukkan nama atau sebahagian nama murid..." autocomplete="off" aria-describedby="resultInfo searchHint">
+              <span class="keycap" aria-hidden="true">CTRL + K</span>
+            </div><span class="field-hint" id="searchHint">Taip nama untuk carian segera, atau pilih Tahun dan Kelas kemudian klik Filter.</span>
+          </div>
+          <p class="filter-heading">Perincikan carian</p>
+          <div class="filter-grid">
+            <div class="field"><label for="year">Tahun</label><select id="year"><option value="">Semua Tahun</option><option value="4">Tahun 4</option><option value="5">Tahun 5</option><option value="6">Tahun 6</option></select></div>
+            <div class="field"><label for="class">Kelas</label><select id="class"><option value="">Semua Kelas</option></select></div>
+          </div>
+          <button class="btn" id="applyFilter" type="button" style="margin-top:15px;min-height:44px">Filter · Paparkan Data</button>
+        </div>
+        <div class="tools-row"><p id="resultInfo" aria-live="polite">Senarai murid disembunyikan. Taip nama atau pilih penapis dan klik Filter.</p><div class="toolbar-actions"><button class="btn light" id="clearFilters" type="button">Kosongkan Penapis</button><button class="btn" id="exportCSV" type="button">Eksport CSV</button></div></div>
+        <div id="dataTable" class="table-scroll" hidden><table><thead><tr><th scope="col">Bil.</th><th scope="col">Nama Murid</th><th scope="col">Kelas</th><th scope="col">Unit Beruniform</th><th scope="col">Kelab dan Persatuan</th><th scope="col">Sukan Permainan</th><th scope="col">Rumah Sukan</th></tr></thead><tbody id="rows"></tbody></table></div>
+        <div id="empty" class="empty"><span class="empty-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m15.8 15.8 5 5"/></svg></span><h3 id="emptyTitle">Carian bersedia</h3><p id="emptyMessage">Taip nama murid atau pilih Tahun dan Kelas, kemudian klik Filter untuk melihat rekod.</p><button class="btn" type="button" id="emptyClear" hidden>Kosongkan Penapis</button></div>
+        <div class="pager" id="pager" hidden><span id="pageInfo">Halaman 1</span><div class="pager-actions"><button type="button" class="btn" id="prev">Sebelumnya</button><button type="button" class="btn" id="next">Seterusnya</button></div></div>
+      </section>
+      <div class="stats" aria-label="Statistik murid">
+        <div class="stat"><span class="stat-top"><i class="stat-dot"></i>Jumlah Rekod</span><strong id="statAll">0</strong></div>
+        <div class="stat"><span class="stat-top"><i class="stat-dot"></i>Tahun 4</span><strong id="stat4">0</strong></div>
+        <div class="stat"><span class="stat-top"><i class="stat-dot"></i>Tahun 5</span><strong id="stat5">0</strong></div>
+        <div class="stat"><span class="stat-top"><i class="stat-dot"></i>Tahun 6</span><strong id="stat6">0</strong></div>
+        <div class="stat warn"><span class="stat-top"><i class="stat-dot"></i>Tidak Lengkap</span><strong id="statMissing">0</strong></div>
+      </div>
+      <div class="notice" id="dataNote">Data asal dimasukkan terus ke dalam fail ini. <strong>Tiada sambungan langsung</strong> ke Google Sheet, dan rekod hanya boleh dibaca.</div>
+    </section>
+  </main>
+  <footer>Mohd Shahril | SK Seri Jaya | Terengganu</footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script>
+  "use strict";
+  // Kamus kategori dan data murid asal; sepenuhnya tersimpan dalam fail HTML.
+  const KAMUS = {"kelas":["4 AL BIRUNI","4 AL FARABI","4 AL GHAZALI","4 AL KHINDI","5 AL BIRUNI","5 AL FARABI","5 AL GHAZALI","5 AL KHINDI","6 AL BIRUNI","6 AL FARABI","6 AL GHAZALI","6 AL KHINDI"],"unit":["PANDU PUTERI TUNAS","PENGAKAP","PUTERI ISLAM","TIADA","TUNAS KADET REMAJA SEKOLAH"],"kelab":["AGAMA ISLAM","BAHASA INGGERIS","BAHASA MELAYU","DOKTOR MUDA","KERJAYA","KITAR SEMULA","PENCEGAHAN JENAYAH","ROBOTIK","STEM","TIADA"],"sukan":["BOLA BALING","BOLA JARING","BOLA SEPAK","BOLA TAMPAR","CATUR","HOKI","OLAHRAGA","SOFBOL","TIADA"],"rumah":["DATO BAHAMAN","MAT KILAU","TIADA","TOK GAJAH","TOK JANGGUT"]};
+  // Format baris: nama|indeks kelas|indeks unit|indeks kelab|indeks sukan|indeks rumah
+  const DATA_DIPADATKAN = `AHMAD RIEZQI RAYQAL BIN AHMAD RUSDI|0|1|1|6|4
+MOHAMMAD DANISH IRHAM BIN MOHD KAMALRUDDIN|0|4|2|3|4
+MUHAMMAD ADAM NAUFAL BIN AHMAD NASRULLAH|0|4|3|2|0
+MUHAMMAD AMMAR ASYRAF BIN HISHAMUDDIN|0|1|4|3|4
+MUHAMMAD FEERAS MIKAIL BIN MD ALFIE SYAHREEN|0|4|1|7|3
+MUHAMMAD HABIBULLAH BIN MOHD YUSOF|0|1|0|6|4
+MUHAMMAD HAZIM BIN MOHD NAJIB|0|1|0|2|0
+MUHAMMAD HUZAIFAH BIN MUHAMMAD ADIB|0|4|6|6|0
+MUHAMMAD ISKANDAR ZULKARNAIN BIN HARIS|0|4|0|5|4
+MUHAMMAD IZDIYAD IMAN BIN MOHD FARID|0|4|4|2|1
+MUHAMMAD RAYYAN IRFAN BIN MUHAMAD ASYRAF AIZAT|0|1|6|3|3
+MUHAMMAD SHARIF NABHAN BIN MOHD SHAIFUL REZA|0|1|4|7|3
+MUHAMMAD SYAKIR RAFIQI BIN AZLI|0|4|7|4|0
+SYED ABDUL UMMAR QAWIEY BIN SYED ABDUL AZIZ|0|4|5|4|1
+SYED RAIYAN UKASYAH BIN SYED SUJAIRI|0|1|5|2|0
+WAN UWAYS AL QARNY BIN WAN OTHMAN|0|1|5|5|4
+ALISHA AMANDA BINTI IMRAN|0|2|3|5|3
+AMNI SAFIYA HUSNAYAN BINTI MOHD SUKRI|0|0|0|5|1
+ATHILAH BINTI MUHAMMAD HAKAM|0|2|2|6|0
+AZZALEA NADEERA BINTI AZMAN|0|2|2|3|3
+GHINA ALIFATUNNISA BINTI MOHAMAD MUSTAQIM|0|2|1|7|1
+HANNAH HUMAIRA BINTI ZULKIFLI|0|0|6|6|4
+HASNA NUR RANIA BINTI MUHAMAD SHAM|0|2|8|1|4
+IZZAH AMANI BINTI AHMAD NAZROLL|0|0|6|4|0
+LASHIRA BINTI HAZRUL|0|0|4|0|0
+MARYAM HUSNA BINTI KHAIRUN NIZAM|0|0|8|7|4
+NUR AISYA ADAWIYAH BINTI MOHD ZAMRI|0|2|4|5|4
+NUR AISYAH BAHIRAH BINTI MOHAMAD NOR IKHWAN|0|2|6|1|0
+NUR ARIQIN FATINA BINTI MOHD HAFIZ|0|0|3|4|4
+NUR FAIRUZ DALILAH BINTI MOHD. FARIZAL|0|2|0|4|4
+NUR FAQIHAH ATIYYAH BINTI MOHD TARMIZI|0|2|4|4|1
+NUR MAWAR AISYA BINTI SUHARDI|0|0|7|0|4
+NUR RABIATUL ADAWIYAH BINTI SAYED JOHAN|0|2|4|3|4
+NURQAISARAH AISHA FATHIA BINTI MUHAMMAD KHAIRUL ANWAR|0|0|4|3|3
+SARAH KHALIDA BINTI MOHD FARIS RIZAL|0|2|4|4|4
+SITI NUR FATIHAH BINTI ABDUL RAHMAN|0|0|4|4|3
+ANNUR MUSLIMAH BINTI MAZRI|0|2|1|1|1
+AHMAD MAHDI BIN MOHD SHAHRULHAFIZ|1|4|6|5|4
+MUHAMMAD ADAM HARIS BIN MOHD AZMI|1|1|2|6|1
+MUHAMMAD ADAM RAYYAN BIN MUHAMMAD ABDUL FAQIH|1|4|1|7|1
+MUHAMMAD AMMAR AL DHAMIRI BIN MOHD AL ALIK|1|4|2|3|0
+MUHAMMAD AMMAR ALFATEH BIN ISA ALHAFIS|1|1|1|3|3
+MUHAMMAD ANAQI BIN MOHD HALIM|1|4|5|4|0
+MUHAMMAD AR RAYYAN BIN MUHAMMAD KHAIRUL FAZLY|1|4|3|4|0
+MUHAMMAD ASY SYAFIE BIN MOHD FEIRUZ EFFENDY|1|4|8|4|3
+MUHAMMAD AZFAR ZIQRI BIN BAHARIM|1|1|0|6|3
+MUHAMMAD AZZIEM BIN FAUZI|1|4|8|2|1
+MUHAMMAD DAIYAN DARWISY BIN MAZLAN|1|1|6|3|1
+MUHAMMAD FIRAZ MIQAEEL BIN MOHD FAUZIE|1|4|8|4|4
+MUHAMMAD MUAZ IRSYAD BIN MUHAMMAD HAFIZ|1|1|4|7|1
+MUHAMMAD UMAR SYADDIQ BIN MOHD SUHAIZAD|1|4|6|2|0
+MUHAMMAD USAID AL HAMAS BIN MUHAMMAD SUBAWEH|1|4|8|7|3
+SYED ABDUL UWAIS AL QARNI BIN SYED YUSLEM|1|1|7|4|4
+SYED AFIQ FAWWAZZ BIN SYED AZMI|1|1|3|5|4
+CHE WAN NUR AMMARA ZAFEEYA BINTI CHE WAN MOHD ZULKIFLI|1|0|2|6|0
+KHAYRA QAISARA BINTI MOHAMMAD NASRI|1|0|1|3|1
+NIK AISYAH NUHA BINTI NIK ISMAIL|1|0|7|1|0
+NIK NUR SOLEHAH BINTI NIK MD NARHAPIZAD|1|0|8|7|3
+NOOR ANNIFA SYAFINA BINTI MD FAISA|1|2|0|5|3
+NUR ADYLEA BINTI MOHD KHOSANI|1|0|0|0|3
+NUR AFIA RAISHA BINTI MOHD AFIZI|1|0|5|4|3
+NUR ARIANA HUSNA BINTI MOHAMMAD KHAIRUL BAZLI|1|2|8|7|0
+NUR HUMAIRA BINTI MUHAMMAD AZAM|1|0|4|1|3
+NUR IRMA HUSNA BINTI IDRIS|1|0|6|5|0
+NUR SOFEA BAHEERA BINTI KAMARULAZWAN|1|2|7|4|1
+NUR ZAHRA BINTI ABDUL AZIZ|1|2|7|3|0
+NURUL EZALIN BINTI EDWAN|1|2|4|6|4
+RAISSA NAZMIA BINTI ROSELAM|1|0|4|0|1
+SYARIFAH NUR ESHAL FAIHANAH BINTI SYED MOHAMAD SHAHRUHAIZUDIN|1|2|7|3|3
+SYIFAA SOLEHAH BINTI MOHD NAUFAL|1|0|6|6|1
+ULYA QANIAH BINTI SOLLEHUDDIN AL AYUBI|1|0|3|4|1
+WAN AMIRAH ALEESYA BINTI W. NORHISYAM|1|2|3|6|0
+WARDA NUR A'ISYAH BINTI MOHD RAZAUDDIN|1|2|5|0|4
+ABDUL RAHMAN BIN MOHD.FIRDAUS|2|1|6|6|1
+AHMAD ARIF RAYYAN BIN AHMAD FARID HISYAMUDIN|2|4|2|7|3
+AHMAD RAQIB DARWISY BIN FAUZUL|2|1|1|3|1
+IRSYAD FATWA BIN WAHI FIRMAN|2|1|7|0|0
+KHALEED AZALI BIN MOHASNI|2|1|5|5|3
+KU MUHAMMAD AQIF AR RAYYAN BIN KU MOHD SYAFIK|2|1|3|6|0
+MOHAMMAD ABDUL HAKIM BIN MOHD RIZAL|2|4|8|7|1
+MUHAMAD RIFQI BIN MOHD RIDUAN|2|4|0|3|4
+MUHAMMAD ADAM ASHRAF BIN MOHD SUKRIE|2|1|6|2|4
+MUHAMMAD AIMAN SOLIHIN BIN NASILAH|2|4|2|5|3
+MUHAMMAD AMIRUL HAFIZUDDIN BIN MOHD ADAM|2|1|7|6|4
+MUHAMMAD AMMAR ALIUDDIN BIN NORASHAKE|2|4|7|7|1
+MUHAMMAD AMMAR ASRIZAL BIN MOHD ASMADY|2|1|4|3|3
+MUHAMMAD AMSYAR BIN MOHD RAIMI|2|1|3|0|0
+MUHAMMAD ANIQ BIN KAMARUDIN|2|4|8|5|4
+MUHAMMAD FAKHRUL IEMAN BIN MOHD FADZLI|2|4|0|4|1
+MUHAMMAD FARIEL NAWFAL BIN MOHD AZAM|2|4|6|4|3
+MUHAMMAD HARRAZ DAZRIN BIN MOHAMMAD HAFIZ|2|4|2|4|1
+MUHAMMAD NAUFAL ARYAN BIN MOHAMAD NIZAM|2|4|1|2|3
+MUHAMMAD RAYYAN BIN AWANG ROZI|2|1|7|5|3
+MUHAMMAD THORIQ ZIYAD BIN AMIN SYAFAWI|2|1|5|2|1
+MUHAMMAD UMAR HARRAZ BIN MOHD RIDZUAN|2|4|3|2|1
+NIK NAUFAL RIZQIE BIN NIK ASMADI|2|4|8|0|1
+ALYA NUR IRDINA BINTI AL-FADHLI IKRAM|2|2|6|0|3
+AN'NUR HUSNA HUDA BINTI AHMAD ASRI SAFFUAN|2|2|2|5|3
+INDAH ARRIANA IMAN BINTI MOHAMMAD IDZWAN IZZANI|2|2|1|1|3
+MARYAM KHADEEJA BINTI MOHD NAZERI|2|2|7|3|3
+NOR KIESHA HUMAIRA BINTI MOHD KHAIRUL AZMI|2|0|5|4|4
+NUR AYRA IMANI BINTI MD NORHARIS|2|0|3|5|1
+NUR IZZ ZAHRA BINTI HAFIZIN JAMIL|2|2|8|6|3
+NUR SYAFIYA RAISSA BINTI MUHAMAD SYAFUAN|2|2|0|7|0
+SHARIFAH NUR SUFIYYA BINTI SYED MOHD ZULFADLI|2|0|6|3|3
+SITI SHAFWATUNNISA SOLIHAH BINTI MOHD ZIRO|2|2|2|1|3
+SITI NURANNISSA FAIHA BINTI AMINUDIN|2|2|1|1|3
+WAN AMIRAH ALEESYA BINTI W. NORHISYAM|2|0|7|6|3
+AHMAD ADIB QAYYUM BIN AHMAD SYUHAIMI|3|4|8|0|3
+AISY RAFANDA BIN MOHD RAHAMI|3|4|3|6|0
+MUHAMMAD ADAM HAIKAL BIN FAIZAL|3|4|6|0|0
+MUHAMMAD ALIFF ZIKRY BIN MOHD AIZAT|3|1|1|3|4
+MUHAMMAD ARYYAN HAIQAL BIN ZUHAIMI|3|1|6|3|1
+MUHAMMAD FADIL BIN MOHD ZAHARUDDIN|3|1|8|5|0
+MUHAMMAD FARHAN MIKAIL BIN MUHAMMAD NOR FALAH|3|4|0|5|3
+MUHAMMAD FARIS BIN YUSNIZAN|3|1|0|5|3
+MUHAMMAD UKASYAH BIN MOHD HAFIS|3|1|4|7|3
+MUHAMMAD HAZIEM DANISH BIN ISWADI|3|4|3|0|4
+MUHAMMAD IKHWAN DENIAL BIN MUHAMMAD ZULKIFLI|3|1|7|2|0
+MUHAMMAD KHILFI NAZMEEN BIN MOHD SUKAR NOOR|3|1|6|3|1
+MUHAMMAD NAQIUDDIN BIN ZULKEFLY|3|1|7|0|0
+MUHAMMAD SYAFIQ DANISH BIN MOHD SHAHARIL|3|1|5|2|4
+MUHAMMAD SYARIF ZAKWAN BIN ARIF|3|4|1|0|4
+MUHAMMAD TUFAIL IZZ BIN ZUBAIHARI|3|1|3|6|1
+SYAZRIL BIN ZAWAWI|3|4|5|0|4
+SYED AMSYAR RAMADHAN BIN SYED YASRI|3|4|0|0|0
+SYED MOHAMMAD ABID FAWWAZ BIN SYED ROSTAM|3|1|1|7|3
+SYED MOHAMMAD NAFFIZ IRSYAD BIN SYED MOHAMMAD ZAIMAN|3|1|5|0|0
+SYED MUHAMMAD FIRASHMIKHAIL BIN SYED MOHD ROSLI|3|4|3|0|0
+AINUL MARDHIAH BINTI MUHD ZAKI|3|2|0|5|0
+INTAN NURBAIZURA BINTI MAZLAN|3|0|6|5|4
+NUR AAIRA AKIRA BINTI MUHAMAD NOOR SAUFI|3|0|4|3|4
+NUR AFEEYA MIKAYLA BINTI MUHAMMAD IDZHAM|3|2|7|3|1
+NUR DAMIA BINTI MOHD KHAIRUL HILMY|3|0|7|1|1
+NUR FARIEDATUL HUDA BINTI FAUZA|3|0|7|1|0
+NUR HANNAH MARSYA BINTI MOHD HAIRRI|3|2|5|0|3
+NUR LUTHFIA INSYIRAH BINTI AZHAR|3|2|6|5|3
+NUR WARDA ERIENA BINTI YASNAIDI|3|0|5|1|0
+SYAFA NUR AQYRA BINTI SAHADAY|3|0|3|7|3
+SYARIFAH NUR AMALIA FAQIHAH BINTI SYED AMINUDIN|3|2|0|0|1
+TUN HAIFA BALQIS BINTI TUN ABDUL RAZAK|3|2|5|1|4
+AHMAD ZIKRI BIN GHAZALI|4|4|4|5|3
+AZRIL DZULKARNAIN BIN ABDUL KHALIQ|4|1|1|4|3
+FAKHRIN IMAN BIN MOHD FAIRUZ|4|4|0|7|3
+MOHAMAD FAIRUZ NIDZAM BIN MOHAMAD KAMARUL RIDWAN|4|4|6|2|3
+MUHAMMAD ADAM AMRULLAH BIN MUHAMAD NOOR SAUFI|4|1|4|5|4
+MUHAMMAD AFIF FIRDAUS BIN MOHD SAMSUBAHARI|4|4|7|6|0
+MUHAMMAD AIMAR BIN ZAMRI|4|1|5|2|3
+MUHAMMAD FAKHRULLAH BIN AHMAD FAKHRUDDIN|4|4|3|7|3
+MUHAMMAD HADIF ZIQRI BIN MUHAMMAD HAFIZ|4|1|2|4|3
+MUHAMMAD IZZ ADAM FIRAS BIN MOHD NORAMIN|4|4|1|4|1
+MUHAMMAD KHUWAILID AIMAN BIN MOHD. KHAIRUL AMRI|4|1|8|6|1
+MUHAMMAD NAUFAL RIFQI BIN MOHD NASRU|4|1|0|3|3
+MUHAMMAD ZHARIIF BIN ABDUL HAKIM|4|4|6|7|1
+SYED AHMAD ARIQ BIN SYED AHMAD ASRI|4|4|7|4|0
+SYED AHMAD ASYRAF BIN SYED MOHD AIMAN|4|1|4|3|0
+WAN MUHAMMAD ASYRAF BIN W.NORHISYAM|4|4|5|0|4
+WAN MUHAMMAD BAIHAQI BIN WAN OTHMAN|4|4|3|4|3
+WAN MUHAMMAD ZARIF BIN WAN AHMAD FADHIL|4|1|2|4|4
+WASEM ZAYYAN BIN MOHD HASRUDDIN|4|4|8|4|3
+ARISSA HUMAIRA BINTI SYAFUAN|4|2|8|5|4
+DIAN ARISSA BINTI MOHAMAD EFDZAL|4|0|0|6|3
+NAZAR AINNUR HUUR 'IIN BINTI ASRULHIZAR|4|2|6|1|0
+NUR AINA SAFEEYA BINTI MD. RIDZUAN|4|2|4|7|4
+NUR AKIFA NAILA BINTI MOHD NOR JUSOH|4|0|7|4|0
+NUR HAZIQAH DAMIA BINTI MOHD NAZIR|4|2|4|5|3
+NUR ZAIRA ALEESYA BINTI MOHD ZAFURIN|4|2|3|5|0
+NURIN IMANINA BINTI MOHAMMAD ROZAIFULIZAM|4|0|2|3|3
+SHARIFAH NUR DHIA QAISARA BINTI SYED MAZWAN|4|0|1|6|3
+SHARIFAH QASSEH MEDDINA BINTI SYED MAZRUL IZWAN|4|2|8|4|3
+SYARIFAH NURHAWA ZAHRA BINTI SYED AZNAN|4|0|0|4|3
+WAN NUR ZAHIRRA BINTI WAN MUHAZARI|4|0|6|3|3
+AHMAD AMMAR FAHIM BIN MUHAMMAD NUR AZMI|5|4|4|6|4
+AMMAR ASYRAF BIN MOHD HASFFSANIZAM|5|1|8|5|1
+CHE WAN DANI EDIKA BIN CHE WAN MUHAMMAD RAFIUDDIN|5|4|0|6|0
+DARWISH IKHWAN BIN MOHD FAIZ|5|1|5|2|1
+KHAIR WAHIDUZ ZAMAN BIN MOHD ROSAIDI|5|1|6|2|1
+MOHAMAD ADAM SAFWAN BIN SHAMSUDDIN|5|1|4|6|0
+MOHAMMAD ARYAN NASHRULLAH BIN MOHAMMAD QUSYAIRI|5|1|7|2|4
+MUHAMMAD AMMAR BIN ABDULLAH|5|4|3|3|1
+MUHAMMAD NURUDDIN BIN MUHAMMAD SAFWAN|5|4|2|3|4
+MUHAMMAD RIFQI BIN RIDUWAN|5|1|1|7|4
+MUHAMMAD THAQIF ILMAN BIN MUHAMAD|5|1|8|4|3
+PUTERA MUHAMMAD UMAR ZIYAD BIN MOHD NASHRUL|5|1|8|4|1
+ADLINA SYAKIRAH BINTI MOHD FAIZAL|5|2|0|5|0
+ALESHA BINTI ABDUL HADI|5|0|0|5|4
+AMMARA QAIRINA BINTI AMARAM @ AMRAN|5|0|6|6|4
+AN'NUR DAMIA HUDA BINTI AHMAD ASRI SAFFUAN|5|2|4|1|3
+ANISAH BASIRAH BINTI MUHAMAD ARIF|5|0|4|7|4
+CHE NUR RAISHA IMANI BINTI CHE MOHD ALMIN|5|2|5|1|0
+NAURA SAAFIRA BINTI MOHAMAD PITRI|5|0|3|5|4
+NOOR AFRINA BATRISYA BINTI MOHD AFENDI BAHARI|5|0|2|6|1
+NUR ADNI AZ ZAHRA BINTI MOHAMAD AMIN|5|0|1|3|3
+NUR AINA FARISYA BINTI SHAHRUL AZWAN|5|2|8|7|4
+NUR AISYAH UMAIRAH BINTI KAMARUL AZMAN|5|2|0|1|1
+NUR ARIANA HAZARRA BINTI MARUAN ABDUL HAKIM|5|2|6|5|0
+NUR FATHIYA AULIA NISA BINTI MOHD YAZRUL HISSHAM|5|0|4|6|1
+NUR HIDAYAH ANISAH BINTI MOHD HABBIBULLAH|5|0|7|3|1
+NUR KHAYLA SYAHIDAH BINTI MOKHTAR|5|0|4|7|4
+NUR LYDIYA INSYIRAH BINTI FAIZAL|5|2|4|4|1
+NUR QAISYA BINTI KHAIRUL FAUZI|5|2|0|4|0
+NUR UMAIZA BINTI MD KHAIRIL HAFIZI|5|0|6|4|0
+NUR ZAHRA JANNAH BINTI ABDUL RAHMAN|5|2|4|3|0
+NURUL SHAMIA IRYANA BINTI MAHADI|5|2|7|4|4
+AHMAD ASYRAF BIN AHMAD FAIZUL|6|4|2|5|0
+AHMAD THAQIF HUSAINI BIN RAMZUNASRI|6|1|4|5|0
+AHMAD ZAYEN MALIK BIN AHMAD ASRUL MARZUAN|6|1|8|3|0
+AYYUB FATTAH BIN MOHAMMAD MAHYUDDIN|6|4|0|3|4
+MUHAMMAD ADAM SYAQIL BIN BARUDDIN|6|1|6|0|4
+MUHAMMAD ADIB KHALIL BIN MOHD KAMIL|6|4|4|5|1
+MUHAMMAD ADIF KHALIL BIN MOHD KAMIL|6|1|7|6|4
+MUHAMMAD AFIE KHAALISH BIN HASMI|6|4|5|7|4
+MUHAMMAD ARSYAD QAYYUM BIN MOHD AZUDEEN|6|1|3|7|3
+MUHAMMAD DANISH BIN MOHD HAFIZ|6|4|2|4|0
+MUHAMMAD FATIH NAUFAL BIN ASMADI|6|1|1|7|0
+MUHAMMAD HAZIQ BIN KHIRUDDIN|6|1|3|0|0
+MUHAMMAD RAFIQ KHALISH BIN OTHMAN|6|4|8|6|0
+MUHAMMAD RAQIF FIRDAUS BIN ROSLI|6|4|0|4|3
+SYED MUHAMMAD UWAIS IZZUDDIN BIN SYED MOHD HIZWANUDDIN|6|4|6|7|1
+UWAIS AL QARNY BIN NOOR BADLI|6|4|4|4|4
+WAN MUHAMMAD HARAZZ BIN WAN ROSDI|6|1|7|0|0
+NUR AMALIA DANIA BINTI ISMAIL|6|0|5|6|1
+NUR ARIANA SOFEA BINTI ABDUL RAHMAN|6|2|3|0|3
+NUR DAMIA BINTI YUSHAINI|6|2|2|7|4
+NUR DHIA KHAISYARA BINTI ABDUL RAUF|6|0|1|1|4
+NUR ELVINA QAISARA BINTI ESZARINOR|6|0|8|5|1
+NUR MADEENA INSYIRAH BINTI AZHAR|6|0|0|6|1
+NUR SAFIYYA RANIA BINTI MOHD ZULKIFLI|6|2|6|3|3
+NURIN ZAKIRAH BINTI MOHD AZUAN|6|0|4|7|1
+NURUL ANIS FARHANA BINTI ABDUL WAHAB|6|0|7|1|3
+NURUL IMAN AMANI BINTI ABDUL MU'IZ|6|2|5|5|4
+RABIATUL IRDINA BINTI ZAKARIA|6|2|3|6|0
+RYANNA SAFRA QIERANA BINTI ROSLI|6|0|1|3|1
+SAIDATUL HUSNA BINTI WAN RAZALI|6|2|8|7|4
+SYARIFAH AWLIYA SOFIA BINTI SYED MAZRIADI|6|2|5|1|1
+SYARIFAH NURLUTFA AMNI BINTI SYED ABDUL LATIF|6|2|0|0|0
+W.NUR TASNIM HADIRAH BINTI W.TARMI|6|0|6|4|3
+ADAM MIKAIL ISLAUSRI BIN ABDULLAH|7|1|2|5|1
+AZRI ARSYAD BIN ABDUL 'AZHIM|7|1|1|6|0
+MUHAMMAD AAKIF DZAKIR BIN MOHD ZULKIFLI|7|1|2|5|1
+MUHAMMAD ADAM BIN ABDUL HAKIM|7|4|8|2|3
+MUHAMMAD BIN MOHD ZULKIFLI|7|1|0|6|4
+MUHAMMAD FARIS AMSYAR BIN IZUAN|7|4|6|2|1
+MUHAMMAD HAZIQ AMMAR BIN MOHD HAZIZIE|7|1|4|5|1
+MUHAMMAD HAZIQ IRFAN BIN MOHD SHAIFUDDIN|7|4|7|3|0
+MUHAMMAD LUTH HAFIZ BIN AHMAD LUTFI|7|1|5|3|1
+MUHAMMAD MUZAKKIR ADIB BIN MOHASSIBBI|7|1|3|7|0
+MUHAMMAD RAYYAN FIRDAUS BIN SAIFUL AMRI|7|1|2|0|0
+SAYED ADIB AKRAM BIN SAYED ADINAN|7|4|1|7|3
+SAYED MUHAMMAD TALHAH BIN SAYED HAMZAH|7|1|8|2|3
+SYED AKMAL HARITH BIN SYED MAZLAN|7|1|0|3|4
+AIN'NUR EYYANI BINTI AMINSISWADY|7|2|6|1|0
+AISYAH MARISSA AZZAHRA BINTI ANUAR|7|2|4|1|4
+HAWA DAHLIA DARWISYAH BINTI MOHD HELMIZAM|7|0|5|6|3
+NOOR DINAR BINTI RAMLI SAFARI|7|0|3|3|1
+NOORDINA BATRISYA BINTI ZAHARUDIN|7|0|2|1|3
+NUR AINA MAISARAH BINTI ARSAD|7|0|1|4|1
+NUR DHIA QALYSSA SOFEA BINTI MOHD AMIN|7|2|8|5|1
+NUR HAZIRAH BINTI MOHD HAFIZ|7|2|0|6|3
+NUR QASEH HUMAIRA BINTI AHMAD YUSRI|7|0|6|3|4
+PUTERI ANNISA SOFHIA BINTI SAMSUDIN|7|0|5|5|1
+RAABI'ATUL 'ADAWIYYAH BINTI ABDUL BASSIT|7|0|3|6|4
+RABIA'TUL NAUHAL BINTI AMIRUL FAIZAL|7|2|0|0|1
+SITI NURFATIHAH BINTI YAZELI|7|2|6|7|4
+WAN NUR ARMYESHA BINTI WAN ADNAN|7|2|4|0|1
+AHMAD FAWWAZ HUMAAM BIN AHMAD FATWA|8|1|2|2|3
+AHMAD ZAYYAN ZULFA BIN NABIL FIKRI|8|1|1|5|0
+AS'AD HUDZAIFAH BIN MOHAMED ALWI|8|4|6|3|3
+HARISHELMI ZAFRI BIN MOHD ZAMRI|8|4|5|5|4
+KU MUHAMMAD ADIB AL ABQORY BIN KU MOHD SYAFIK|8|1|3|2|4
+LUTFI ZARIF BIN ANUAR AZRAI|8|4|2|3|3
+MOHAMAD HASHIM ASHRAF BIN MOHAMAD NABIL|8|1|1|7|1
+MUHAMMAD ADAM BIN AZIZAN|8|4|8|4|1
+MUHAMMAD AFIF RAYYAN BIN MOHD AFIZI|8|4|4|5|1
+MUHAMMAD AL FATEH BIN HARIS|8|1|4|6|4
+MUHAMMAD AMIN AMJAD BIN MAZDIE|8|1|4|6|3
+MUHAMMAD AQIL ARMAN BIN MOHD AMIN AZRO|8|1|7|7|0
+MUHAMMAD DANISH DARWISY BIN MUHAMAD AZMI|8|4|5|2|4
+MUHAMMAD FAQIEH ZIKRIE BIN MOHD FAUZIE|8|4|4|4|1
+MUHAMMAD RAYYAN AMZAR BIN 'AMMAR|8|4|2|2|0
+MUHAMMAD ZIYAD BIN HAZRUL|8|4|4|2|1
+NIK MUHAMMAD 'UMAR BIN NIK MD NARHAPIZAD|8|1|8|7|4
+THAQIF HAFIY BIN MOHD SURILAZMI AZRUL|8|4|1|4|3
+TON HASNAWI HAMZI BIN TON HIRMAN|8|4|8|4|3
+AIRIS ARIANNA BINTI MOHD HISYAM|8|0|8|1|4
+AISYAH BINTI ASMAWI|8|2|0|6|0
+CHE WAN ZARATUL NUHA BINTI CHE WAN MOHD RAMHAIRUSHAM|8|0|4|1|0
+DANIA NURUL ASYIQIN BINTI DARMA|8|2|7|1|3
+NUR ALYA ADRIANA AINUL MARDHIAH BINTI MOHD HERMAN|8|0|0|4|0
+NUR ARIANA HUSNA BINTI MOHD HAFIZ|8|2|6|5|1
+NUR DAMIA ZULAIKHA BINTI MOHD AZAHAR|8|0|4|1|0
+NUR HANA SAFIYYA BINTI MOHD SAFIAN|8|0|4|3|4
+NUR HANIS BINTI MOHD HAFIZ|8|2|4|7|3
+NUR HUMAIRA BINTI MOHD HAIRRI|8|2|3|4|0
+NUR IRDINA ZAHRA BINTI NGAH|8|2|4|5|0
+NUR QISYA ADELIA BINTI MOHD HARIFIN|8|0|6|6|1
+NUR QURAINSYA SYUHADA BINTI DIN|8|0|4|3|4
+QASDINA AFIQAH BINTI MOHD ABDIKA|8|2|7|7|0
+SHARIFAH AINUL MARDHIAH BINTI SYED MOHD ALBANNA|8|2|3|4|0
+SHARIFAH NUR DHIA MARISSA BINTI SYED MAZWAN|8|2|3|0|4
+SUMAYYAH BINTI SAPERI|8|2|2|6|0
+IZZARA RAISHA BINTI SOAFFIAN AL HARDY|8|2|3|1|4
+ADAM IZZ ZIQRI BIN MAZLI|9|1|2|6|0
+AHMAD ARIQ NAUFAL BIN AHMAD FARID HISYAMUDIN|9|4|1|3|3
+AMMAR BIN MUHAMMAD HAKAM|9|1|0|6|4
+MUHAMAD NAUFAL BIN MOHD JAMIL NASARUDDIN|9|1|5|5|3
+MUHAMMAD ALIF SABRI BIN MOHD SHARKAWI|9|4|3|6|0
+MUHAMMAD ANNAS BIN SUPIAN|9|4|4|3|3
+MUHAMMAD ASWAD DANIAL BIN ABDUL HADI|9|4|1|7|4
+MUHAMMAD AZNIE FAHRIN BIN ABD AZIZ|9|1|8|7|3
+MUHAMMAD FARHAN QAYYUM BIN MOHD NIZAR|9|1|0|5|4
+MUHAMMAD IMAN ZAFRAN BIN AHMAD FAZLI|9|1|4|3|0
+MUHAMMAD IRFAN ASYRAF BIN MOHD HAIRI|9|4|7|5|1
+MUHAMMAD KHAIRIL AMSYAR BIN MUHAMMAD KHAIRUL ANWAR|9|1|5|4|3
+AMANINA BATRISYIA BINTI MUHAMAD ARIF|9|0|8|4|4
+FATIEN NOR IZARA BINTI YUSRI @ MOHD YUSRI|9|0|4|0|1
+IRIS UMAIZA BINTI WAHI FIRMAN|9|2|4|7|1
+NUR AIN AFINA BINTI KASSIM|9|0|3|5|0
+NUR ALISHA DAMIA BINTI ABDULLAH|9|2|2|6|3
+NUR AMNA NAEEMA BINTI MOHD JAMARUZIEE|9|0|1|3|3
+NUR ARISSA FAIQIHAH BINTI NOOR FADHLY|9|0|8|1|3
+NUR AUNI HASLIANAA BINTI MOHD NASIR|9|0|0|1|1
+NUR HIDAYAHTUL SOFFIYAH BINTI MOHD NIZAM|9|0|4|4|1
+NUR NISSA SOLEHAH BINTI ISMAIL|9|2|4|6|4
+NUR QAISARAH UMAIRAH BINTI MOHD AZMI|9|0|7|3|4
+NUR QHALISYA DAMIA BINTI MOHD RIDZUAN|9|2|5|7|4
+NUR RABIHAH BINTI MUHAMAD RASYID|9|2|3|1|3
+NUR ZAHRA SAFFIYA BINTI MOHD AZRILBAHARI|9|0|4|5|4
+NURUL AUFA QAISARA BINTI MOHD FAIZUL|9|0|4|4|4
+NURUL IZZAH BINTI MUHAMMAD HAFIZ|9|0|4|0|1
+NURUL SYAZA SYAKILA BINTI ABDUL HAMID|9|2|7|7|1
+SHARIFAH HASNA NABILA BINTI SYED MAZLAN|9|2|4|4|3
+SITI NUR HANA BINTI MOHD ADAM|9|2|7|0|1
+UMMI SYAZREEN BINTI AWANG ROZI|9|2|5|0|0
+WAN AINA HANIN BINTI WAN HIRZAM|9|0|3|0|3
+WAN AMMARA DARWISYAH BINTI WAN MOHD AZAM|9|0|2|0|3
+NUR MALAIKHA HUSNA BT MOHD RUSDAN|9|2|8|1|1
+NUR DINI DAMIA IRDINA BT MOHD AZMAN|9|0|8|4|2
+AHMAD ZAKI HAMDI BIN HARUN|10|1|2|6|4
+AWALI SHAFIY BIN AZIZUL|10|4|4|5|1
+KAZEM AZALI BIN MOHASNI|10|4|6|3|3
+MEGAT SHAHREZA HUZAIFAH BIN MEGAT SHAHRUL HISHAM|10|4|4|2|4
+MUHAMMAD 'AQIL BIN ROSFIZA|10|1|4|0|0
+MUHAMMAD ADAM BIN AKSAH|10|1|5|5|1
+MUHAMMAD AIDAN AMZAR BIN FAEZ HAFEZY|10|4|3|6|4
+MUHAMMAD ANNAS BIN MD FAISA|10|1|2|3|3
+MUHAMMAD ASFARRIZQI HAQIMI BIN MOHD JOHAN|10|4|1|7|1
+MUHAMMAD DANISH AL ALIF BIN MOHD AL-AFKHA|10|4|8|4|3
+MUHAMMAD IZDIYAD IZZAREL BIN SHEIHUL AKBAR|10|1|0|0|4
+MUHAMMAD IZZUL ISLAM BIN ROSLAN|10|1|2|2|1
+MUHAMMAD MUHAIMIN BIN AMINUDIN|10|4|4|4|1
+MUHAMMAD SHAIQBAL BIN MOHD SHUKRI|10|4|7|7|4
+MUHAMMAD SYAFIUDDIN SOLIHIN BIN MOHD ZIRO|10|1|5|2|3
+MUHAMMAD WILDAN HUZAIFAH BIN MOHAMAD NAZIRAN|10|1|3|0|0
+MUHAMMAD ZIQRI IMAN BIN ZAINUDIN|10|4|2|2|3
+SYED HARITH RAYYAN BIN SYED MOHD AZANI|10|4|2|6|4
+AUNI NUR ZAHIRAH BINTI ISA ALHAFIS|10|2|1|3|1
+AYSAARA IMAN AZZAHRAA' BINTI MUHAMMAD AMIRUL|10|0|0|6|1
+NIK NAURAH TIHANI BINTI NIK ASMADI|10|0|1|3|4
+NOUR RANIA ELAIRA BINTI KHAIROL IFZUWA|10|2|2|1|2
+NUR AFINA SOFIEYA BINTI ROSLI|10|0|8|0|0
+NUR AFRINA RIDHA BINTI MOHD AFIZAN|10|0|4|1|1
+NUR ERYSCHA AISARA BINTI MOHD AL FAUZAL ADZHIM|10|2|6|0|4
+NUR FAIQAH DAYANA BINTI SUZAINI|10|0|4|6|3
+NUR HANIS HUSNA BINTI ZULKIFLI|10|2|4|3|1
+NUR SAFURA ZAHRA BINTI SOLLEHUDDIN|10|2|5|7|0
+NUR TASNIM IMANI BINTI ZUBAIHARI|10|2|3|1|4
+NUR UZMA BAQIYAH BINTI ABDULLAH|10|0|0|5|0
+SHARIFAH NOR ADZRA HUMAIRA BINTI SYED AZMI|10|0|6|0|3
+SITI A'ISYAH SOFIYYAH BINTI MOHD ZULKIFLI|10|0|4|0|1
+SITI NURFARISYA SYAFIQA BINTI MOHD ZULKIFLI|10|0|7|0|3
+SITI SORFINA AULIA BINTI MOHD KHAIRUL ANUAR|10|0|5|0|4
+SYARIFAH NUR AMANINA FITRIAH BINTI SYED AMINUDIN|10|0|4|6|1
+TUN HASNA HUMAIRA BINTI TUN ABDUL RAZAK|10|2|1|4|4
+UMMI FASIHAH BINTI MOHD KAIRUDDIN|10|0|8|1|4
+ABDUL HANIF IQBAL BIN ABDUL HAMID LOKMAN|11|4|2|2|4
+AHMAD FAKHRUL HADI BIN KAMALRULARMAN|11|1|1|0|0
+AL FAKHRUL IRFAN MUQRI BIN AL-FADHLI IKRAM|11|1|0|6|1
+MOHAMAD AMIR IQBAL BIN MOHAMAD HAKIM|11|4|7|0|3
+MOHAMAD NAZERI BIN NORDIN|11|4|5|5|1
+MOHAMAD WAQIUDDIN BIN MOHAMAD RAZALI|11|4|3|2|1
+MUHAMAD KHAIROL AL HAKIM BIN KAMAROL SUPI|11|1|2|0|0
+MUHAMAD NAUFAL HAIKAL BIN MUHAMAD SUPIAN|11|1|1|7|3
+MUHAMMAD ADAM ASYRAFF BIN MOHD KHAIRUL AMRI|11|1|0|5|3
+MUHAMMAD ADAM MIKHAIL BIN ABDULLAH|11|1|6|6|0
+MUHAMMAD ADAM QUSYAIRI BIN MOHD ZULKIFLI|11|1|4|3|1
+MUHAMMAD ADIB SAFWAN BIN MUHAMMAD IDZHAM|11|1|7|7|4
+MUHAMMAD AIMAN BIN ABDUL WAHAB|11|1|5|0|0
+MUHAMMAD ALIF FAHMI BIN FAUZI|11|1|2|6|4
+MUHAMMAD AZIB BIN MUHAMMAD AZIZI|11|4|1|3|1
+MUHAMMAD FATHULMUIN BIN ZULKAPLI|11|4|3|7|1
+MUHAMMAD HAZIQ ZULHILMI BIN HAMIDI|11|1|0|0|4
+MUHAMMAD UWAIS AL QARNI BIN MUHAMMAD SUBAWEH|11|1|6|0|1
+UMAR AL QADRI BIN SOLLEHUDDIN AL AYUBI|11|1|5|0|0
+AINUL ANEESA BINTI BUNCHART YAKOH|11|0|8|5|3
+DHANIEYA EIZZARA BINTI KAMARUL AZHAN|11|2|6|3|1
+INTAN NUR HUSNA LIDYANA BINTI ABDULLAH|11|0|4|0|3
+NOR IRDINA BATRISYA BINTI ABDUL FATTAH|11|2|4|6|4
+NUR AMIRA AQILAH BINTI MOHD ABDUL LATIF|11|2|7|0|4
+NUR AREESYA AIRIEQA BINTI ABDULLAH|11|2|5|1|4
+NUR DAMIA QALEESYA BINTI SUHAIZAN|11|0|3|0|0
+NUR HADFINA QURRATULAINI BINTI HAMID|11|2|0|5|4
+NUR IZZAH AISYAH BINTI MOHD KAMARULZAMAN|11|2|6|6|1
+NURUL IMAN ELFIERA BINTI MOHD SUHAIMI|11|2|4|6|4
+NUR ARIANA AKMAL BINTI MUHAMMAD FARIS|4|2|8|3|2
+NUR MAWARDATUL HUSNA BINTI MOHD RUSDAN|2|0|3|1|2
+NUR ANIS ALEESYA BINTI MOHD TAMIMI|6|3|1|7|0
+NUR SYAMIMI BINTI MOHD TAMIMI|10|3|1|7|0
+MUHAMMAD FAAZRIL BIN HARMAN|6|3|9|0|2
+NOR SYAKIRA NAJWA BINTI MOHD SHARUL ZAHARUDIN|4|3|9|1|1
+AMMARA NUR SAFIYYA BINTI MOHD HAZLY|10|2|9|8|2
+MUHAMMAD FAAZRIL BIN HARMAN|6|1|9|8|2
+NOOR AMNANI ZALIKHA BINTI MOHD RIDHWAN|0|2|8|7|0
+MUHAMMAD AMMRAN BIN ALI|3|4|2|4|1
+NUR FARZANA BINTI FAUZA|9|0|1|7|0
+MUHAMMAD FIRDAUS BIN FAUZA|5|1|3|2|0
+NUR FAQIHAH ADAWIYAH BINTI MOHD FADZLI|5|3|7|1|0
+IMAN QARIZH BIN ISHAK|3|3|9|8|2
+IMAN QAYYUM BIN ISHAK|9|3|9|8|2`;
+  const FIELD = ["nama", "kelas", "unit", "kelab", "sukan", "rumah"];
+  const DATA_ASAL = DATA_DIPADATKAN.trim().split("\n").map((line) => {
+    const [nama, ...indeks] = line.split("|");
+    const o = { nama };
+    ["kelas", "unit", "kelab", "sukan", "rumah"].forEach((k, i) => { o[k] = KAMUS[k][Number(indeks[i])] || "TIADA"; });
+    return o;
+  });
+  let rekod = DATA_ASAL.map((r) => ({ ...r }));
+  let halaman = 1;
+  let toastTimer;
+  const $ = (id) => document.getElementById(id);
+  const normal = (v) => String(v ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleUpperCase("ms-MY").trim();
+  const isi = (v) => { const s = String(v ?? "").trim(); return !s || ["-", "—", "NULL", "N/A"].includes(s.toUpperCase()) ? "TIADA" : s; };
+  const tiada = (r) => ["unit", "kelab", "sukan", "rumah"].some((k) => normal(r[k]) === "TIADA");
+  const escapeHTML = (s) => String(s ?? "").replace(/[&<>"']/g, (ch) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[ch]);
+  function kiraDuplikasi() {
+    const bil = new Map();
+    rekod.forEach((r) => { const k = normal(r.nama) + "||" + normal(r.kelas); bil.set(k, (bil.get(k) || 0) + 1); });
+    return new Set([...bil].filter(([, n]) => n > 1).map(([k]) => k));
+  }
+  function jamMalaysia() {
+    const d = new Date();
+    $("liveDate").textContent = new Intl.DateTimeFormat("ms-MY", { timeZone:"Asia/Kuala_Lumpur", weekday:"long", day:"numeric", month:"long", year:"numeric" }).format(d);
+    $("liveTime").textContent = new Intl.DateTimeFormat("ms-MY", { timeZone:"Asia/Kuala_Lumpur", hour:"2-digit", minute:"2-digit", second:"2-digit", hourCycle:"h23" }).format(d);
+  }
+  function pemberitahuan(teks, ralat=false) {
+    const el = $("toast"); el.textContent = teks; el.classList.toggle("error", ralat); el.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 4700);
+  }
+  function kemasKelas() {
+    const s = $("class"), pilihan = s.value, tahun = $("year").value;
+    const kelas = [...new Set(rekod.map((r) => r.kelas).filter((v) => !tahun || v.startsWith(tahun)))].sort((a,b) => a.localeCompare(b,"ms",{numeric:true}));
+    s.replaceChildren(new Option("Semua Kelas", ""), ...kelas.map((k) => new Option(k, k)));
+    s.value = kelas.includes(pilihan) ? pilihan : "";
+  }
+  function statistik(duplicates) {
+    $("statAll").textContent = rekod.length;
+    [4,5,6].forEach((t) => { $("stat"+t).textContent = rekod.filter((r) => r.kelas.startsWith(String(t))).length; });
+    $("statMissing").textContent = rekod.filter(tiada).length;
+    $("dataNote").innerHTML = 'Data asal tersimpan dalam HTML dan <strong>tiada penyegerakan langsung</strong> ke Google Sheet. ' +
+      rekod.filter(tiada).length + ' rekod mempunyai penyertaan TIADA; ' + duplicates.size + ' nama dan kelas berulang. Paparan ini adalah baca sahaja.';
+  }
+  let filterDigunakan = false;
+  function dataDitapis(duplicates) {
+    const q = normal($("search").value), tahun = $("year").value, kelas = $("class").value;
+    if (!q && !filterDigunakan) return []; // Rekod kekal tersembunyi sebelum carian atau Filter diklik.
+    return rekod.map((r, idx) => ({ ...r, idx })).filter((r) => {
+      const matchesText = !q || normal(r.nama).includes(q);
+      return matchesText && (!tahun || r.kelas.startsWith(tahun)) && (!kelas || r.kelas === kelas);
+    }).sort((a,b) => a.nama.localeCompare(b.nama, "ms", {sensitivity:"base"}) || a.kelas.localeCompare(b.kelas,"ms",{numeric:true}));
+  }
+  function medan(v) {
+    return normal(v)==="TIADA" ? '<span class="pill-missing">TIADA</span>' : escapeHTML(v);
+  }
+  function papar() {
+    const duplicates = kiraDuplikasi(); statistik(duplicates);
+    const adaCarian = Boolean(normal($("search").value)) || filterDigunakan;
+    const data = dataDitapis(duplicates), setiap = 20;
+    const maks = Math.max(1, Math.ceil(data.length / setiap)); halaman = Math.min(Math.max(halaman,1),maks);
+    const mula = (halaman-1)*setiap, potongan = data.slice(mula,mula+setiap);
+    const html = potongan.map((r,i) => {
+      const dup = duplicates.has(normal(r.nama) + "||" + normal(r.kelas));
+      return `<tr><td class="number" data-label="Bil.">${mula+i+1}</td><td class="student" data-label="Nama Murid"><span>${escapeHTML(r.nama)}${dup?'<span class="duplicate">⚠ Nama dan kelas berulang</span>':''}</span></td><td data-label="Kelas"><span class="class-tag">${escapeHTML(r.kelas)}</span></td><td data-label="Unit Beruniform">${medan(r.unit)}</td><td data-label="Kelab / Persatuan">${medan(r.kelab)}</td><td data-label="Sukan Permainan">${medan(r.sukan)}</td><td data-label="Rumah Sukan">${medan(r.rumah)}</td></tr>`;
+    }).join("");
+    $("rows").innerHTML = html;
+    $("dataTable").hidden = !data.length;
+    $("pager").hidden = !adaCarian || !data.length;
+    $("empty").hidden = !!data.length;
+    $("emptyTitle").textContent = adaCarian ? "Tiada rekod ditemui" : "Carian bersedia";
+    $("emptyMessage").textContent = adaCarian ? "Cuba nama atau ejaan lain, atau ubah penapis Tahun dan Kelas." : "Taip nama murid atau pilih Tahun dan Kelas, kemudian klik Filter untuk melihat rekod.";
+    $("emptyClear").hidden = !adaCarian;
+    $("resultInfo").textContent = !adaCarian ? "Senarai murid disembunyikan. Taip nama atau pilih penapis dan klik Filter." : data.length ? `Memaparkan ${mula+1}–${mula+potongan.length} daripada ${data.length} rekod` : "0 rekod menepati carian";
+    $("pageInfo").textContent = `Halaman ${halaman} daripada ${maks}`;
+    $("prev").disabled = halaman<=1 || !data.length; $("next").disabled = halaman>=maks || !data.length;
+  }
+  function segarData() { kemasKelas(); halaman=1; papar(); }
+  function kosongkanPenapis() { filterDigunakan=false; $("search").value="";$("year").value=""; kemasKelas(); $("class").value=""; halaman=1;papar(); }
+  $("search").addEventListener("input", () => { filterDigunakan=false; halaman=1; papar(); });
+  $("class").addEventListener("change", () => { filterDigunakan=false; halaman=1; papar(); });
+  $("applyFilter").addEventListener("click", () => {
+    filterDigunakan = Boolean($("year").value || $("class").value);
+    halaman=1; papar();
+    if (filterDigunakan) $("resultInfo").scrollIntoView({behavior:"smooth",block:"nearest"});
+    else $("year").focus();
+  });
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault(); $("search").focus(); $("search").select();
+    }
+  });
+  $("year").addEventListener("change", () => { kemasKelas(); filterDigunakan=false; halaman=1;papar(); });
+  $("clearFilters").addEventListener("click",kosongkanPenapis);
+  $("emptyClear").addEventListener("click",kosongkanPenapis);
+  $("prev").addEventListener("click", () => { halaman--;papar(); });
+  $("next").addEventListener("click", () => { halaman++;papar(); });
+  function csvSel(v) {
+    let s=String(v??"");
+    // Lindungi daripada formula CSV apabila fail dibuka dalam perisian hamparan.
+    if (/^[\t\r\n ]*[=+@\-]/.test(s)) s="'"+s;
+    return '"'+s.replace(/"/g,'""')+'"';
+  }
+  $("exportCSV").addEventListener("click", () => {
+    try {
+      const header=["Nama Murid","Kelas","Unit Beruniform","Kelab dan Persatuan","Sukan Permainan","Rumah Sukan"];
+      const teks="\uFEFF"+[header,...rekod.map((r)=>FIELD.map((f)=>r[f]))].map((r)=>r.map(csvSel).join(",")).join("\r\n");
+      const url=URL.createObjectURL(new Blob([teks],{type:"text/csv;charset=utf-8"}));
+      const a=document.createElement("a");a.href=url;a.download="CHECKER_NAMA_eKOKUM_TAHAP2.csv";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+      pemberitahuan(`CSV mengandungi ${rekod.length} rekod berjaya disediakan untuk dimuat turun.`);
+    } catch(err){pemberitahuan("Eksport CSV gagal: "+err.message,true);}
+  });
+  jamMalaysia();setInterval(jamMalaysia,1000);
+  segarData();
+  </script>
+</body>
+</html>
